@@ -1,16 +1,70 @@
+# Get user input for the range
 
-# Given a string indicating a range of letters, return a string which includes all the letters in that range, including the last letter.
-# Note that if the range is given in capital letters, return the string in capitals also!
+range_input = input("Enter the range (e.g. 'a-z'): ")
 
-# Examples
-# "a-z" ➞ "abcdefghijklmnopqrstuvwxyz"
-# "h-o" ➞ "hijklmno"
-# "Q-Z" ➞ "QRSTUVWXYZ"
-# "J-J" ➞ "J"
-# Notes a hyphen will separate the two letters in the string.
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+# Remove quotes from the user input
 
-user_range = input("Enter a range of letters (e.g., a-z): ")
+range_input = range_input.strip('"')
+
+
+# Split the range into start and end characters
+
+start_letter, end_letter = range_input.split('-')
+
+
+# Convert start and end characters to ASCII codes using `ord`
+
+start_ascii = ord(start_letter)
+
+end_ascii = ord(end_letter)
+
+
+# Generate the string of characters in the range using `chr` and list comprehension
+
+char_range = [chr(i) for i in range(start_ascii, end_ascii+1)]
+
+
+# Join the characters in the range into a single string
+
+result_string = ''.join(char_range)
+
+
+# Print the resulting string
 
 print(result_string)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
